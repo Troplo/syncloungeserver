@@ -50,7 +50,7 @@ const socketServer = ({
   // Setup our router
   if (staticPath) {
     console.log('Serving static files at', staticPath);
-    router.use(express.static(staticPath));
+    router.use("*", express.static(staticPath));
   } else {
     router.get('/', (req, res) => {
       res.send('You\'ve connected to the SLServer, you\'re probably looking for the webapp.');
